@@ -8,6 +8,9 @@
     const addDie = (dieType: number) => {
         dice = [...dice, {type: dieType, currentValue: 0}];
     }
+    const removeDie = (die: Die) => {
+        dice = dice.filter(d => d != die);
+    }
 </script>
 
 <body>
@@ -16,11 +19,11 @@
         <div class="dice">
             {#each dice as die}
             <div class="die shadow">
-                <p class="die-remove">-</p>
                 <p>{die.type}</p>
+                <p on:click={() => removeDie(die)} class="die-remove">-</p>
             </div>
             {/each}
-            <div on:click={() => addDie(12)} class="die shadow">
+            <div on:click={() => addDie(12)} class="die-add' shadow">
                 <span>Add Die</span>
             </div>
         </div>
@@ -57,7 +60,7 @@
         margin-left: auto;
         display: grid;
         justify-content: center;
-        grid-template-rows: min-content max-content;
+        grid-template-rows: min-content min-content;
         grid-template-columns: 1fr;
         font-family: "Grenze Gotisch", cursive;
     }
@@ -65,12 +68,14 @@
         font-size: 5rem;
     }
     .dice{
+        margin-left: 1rem;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
         grid-template-rows: 1fr;
     }
     .die{
         min-height: 10rem;
+        max-width: 10rem;
         position: relative;
         transition: all 0.2s ease-out;
         display: grid;
@@ -81,17 +86,17 @@
         margin-bottom: 1rem;
         background-color: var(--panel-color);
     }
-    .die:hover .die-remove{
+    .die:active .die-remove{
         display: grid;
         opacity: 1;
     }
-    .die:active .die-remove{
+    .die:hover .die-remove{
         display: grid;
         opacity: 1;
     }
     .die-remove{
         cursor: pointer;
-        transition: opacity 0.7s ease-in-out;
+        transition: all 0.7s ease-in-out;
         opacity: 0;
         position: absolute;
         background-color: var(--statement-color);
