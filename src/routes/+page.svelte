@@ -23,8 +23,14 @@
                 <p on:click={() => removeDie(die)} class="die-remove">-</p>
             </div>
             {/each}
-            <div on:click={() => addDie(12)} class="die-add' shadow">
-                <span>Add Die</span>
+            <div on:click={() => addDie(12)} class="die-add shadow">
+                <span>4</span>
+                <span>6</span>
+                <span>8</span>
+                <span>10</span>
+                <span>12</span>
+                <span>20</span>
+                Add Die +
             </div>
         </div>
     </main>
@@ -93,6 +99,23 @@
     .die:hover .die-remove{
         display: grid;
         opacity: 1;
+    }
+    .die-add{
+        background-color: var(--panel-color);
+        min-height: 10rem;
+        padding: 1rem;
+        max-width: 10rem;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .die-add span{
+        display: grid;
+        width: 2rem;
+        border-radius: 0.3rem;
+        height: 2rem;
+        place-content: center;
+        background-color: var(--statement-color);
     }
     .die-remove{
         cursor: pointer;
