@@ -4,6 +4,7 @@
         type: number;
         currentValue: number;
     }
+    let dieTypes: number[] = [4,6,8,10,12,20];
     let dice: Die[] = [];
     const addDie = (dieType: number) => {
         dice = [...dice, {type: dieType, currentValue: 0}];
@@ -23,14 +24,10 @@
                 <p on:click={() => removeDie(die)} class="die-remove">-</p>
             </div>
             {/each}
-            <div on:click={() => addDie(12)} class="die-add shadow">
-                <span>4</span>
-                <span>6</span>
-                <span>8</span>
-                <span>10</span>
-                <span>12</span>
-                <span>20</span>
-                Add Die +
+            <div class="die-add shadow">
+                {#each dieTypes as dieType}
+                <span on:click={() => addDie(dieType)}>{dieType}</span>
+                {/each}
             </div>
         </div>
     </main>
@@ -102,9 +99,11 @@
     }
     .die-add{
         background-color: var(--panel-color);
-        min-height: 10rem;
+        position: relative;
+        max-height: 10rem;
         padding: 1rem;
         max-width: 10rem;
+        border-radius: 0.3rem;
         display: grid;
         place-items: center;
         grid-template-columns: 1fr 1fr 1fr;
