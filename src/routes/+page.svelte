@@ -1,8 +1,27 @@
+<script lang="ts">
+
+    interface Die{
+        type: number;
+        currentValue: number;
+    }
+    let dice: Die[] = [];
+    const addDie = (dieType: number) => {
+        dice = [...dice, {type: dieType, currentValue: 0}];
+    }
+</script>
+
 <body>
     <main>
         <h1>DoughnD</h1>
-        <div class="die">
-            d20;
+        <div class="dice">
+            {#each dice as die}
+            <div class="die shadow">
+            <p>{die.type}</p>
+            </div>
+            {/each}
+            <div on:click={() => addDie(12)} class="die shadow">
+                <span>Add Die</span>
+            </div>
         </div>
     </main>
 </body>
@@ -12,6 +31,7 @@
         --statement-color: #3d816c;
         --background-color: #060D0B;
         --panel-color: #0C1A15;
+        --text-color: #E8E8E8;
     }
     @import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap");
     * {
@@ -22,10 +42,43 @@
     body {
         margin: 0;
         padding: 0;
+        background-color: var(--background-color);
+    }
+    .shadow{
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     }
     main {
-        background-color: var(--background-color);
+        color: var(--text-color);
+        max-width: 1200px;
+        width: 100%;
         min-height: 100vh;
+        margin-right: auto;
+        margin-left: auto;
+        display: grid;
+        justify-content: center;
+        grid-template-rows: min-content min-content;
         font-family: "Grenze Gotisch", cursive;
+    }
+    main h1{
+        font-size: 5rem;
+    }
+    .dice{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+        grid-template-rows: 1fr;
+    }
+    .die:hover{
+        background-color: var(--statement-color);
+    }
+    .die{
+        transition: all 0.2s ease-out;
+        align-content: center;
+        padding: 1rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 0.3rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        background-color: var(--panel-color);
     }
 </style>
