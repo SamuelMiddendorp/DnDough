@@ -16,7 +16,8 @@
         <div class="dice">
             {#each dice as die}
             <div class="die shadow">
-            <p>{die.type}</p>
+                <p class="die-remove">-</p>
+                <p>{die.type}</p>
             </div>
             {/each}
             <div on:click={() => addDie(12)} class="die shadow">
@@ -56,7 +57,8 @@
         margin-left: auto;
         display: grid;
         justify-content: center;
-        grid-template-rows: min-content min-content;
+        grid-template-rows: min-content max-content;
+        grid-template-columns: 1fr;
         font-family: "Grenze Gotisch", cursive;
     }
     main h1{
@@ -64,21 +66,44 @@
     }
     .dice{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
         grid-template-rows: 1fr;
     }
-    .die:hover{
-        background-color: var(--statement-color);
-    }
     .die{
+        min-height: 10rem;
+        position: relative;
         transition: all 0.2s ease-out;
-        align-content: center;
+        display: grid;
+        place-items: center;
         padding: 1rem;
-        width: 5rem;
-        height: 5rem;
         border-radius: 0.3rem;
         margin-right: 1rem;
         margin-bottom: 1rem;
         background-color: var(--panel-color);
+    }
+    .die:hover .die-remove{
+        display: grid;
+        opacity: 1;
+    }
+    .die:active .die-remove{
+        display: grid;
+        opacity: 1;
+    }
+    .die-remove{
+        cursor: pointer;
+        transition: opacity 0.7s ease-in-out;
+        opacity: 0;
+        position: absolute;
+        background-color: var(--statement-color);
+        border-top-left-radius: 0.3rem;
+        font-size: 2rem;
+        padding: 0.2rem;
+        display: grid;
+        place-content: center;
+        width: 2rem;
+        height: 2rem;
+        display: none;
+        top: 0;
+        left: 0;
     }
 </style>
