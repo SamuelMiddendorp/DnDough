@@ -4,9 +4,13 @@
         type: number;
         currentValue: number;
     }
+    let dieTypes: number[] = [4,6,8,10,12,20];
     let dice: Die[] = [];
     const addDie = (dieType: number) => {
         dice = [...dice, {type: dieType, currentValue: 0}];
+    }
+    const removeDie = (die: Die) => {
+        dice = dice.filter(d => d != die);
     }
 </script>
 
@@ -16,12 +20,14 @@
         <div class="dice">
             {#each dice as die}
             <div class="die shadow">
-                <p class="die-remove">-</p>
                 <p>{die.type}</p>
+                <p on:click={() => removeDie(die)} class="die-remove">-</p>
             </div>
             {/each}
-            <div on:click={() => addDie(12)} class="die shadow">
-                <span>Add Die</span>
+            <div class="die-add shadow">
+                {#each dieTypes as dieType}
+                <span on:click={() => addDie(dieType)}>{dieType}</span>
+                {/each}
             </div>
         </div>
     </main>
@@ -57,7 +63,7 @@
         margin-left: auto;
         display: grid;
         justify-content: center;
-        grid-template-rows: min-content max-content;
+        grid-template-rows: min-content min-content;
         grid-template-columns: 1fr;
         font-family: "Grenze Gotisch", cursive;
     }
@@ -65,12 +71,14 @@
         font-size: 5rem;
     }
     .dice{
+        margin-left: 1rem;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
         grid-template-rows: 1fr;
     }
     .die{
         min-height: 10rem;
+        max-width: 10rem;
         position: relative;
         transition: all 0.2s ease-out;
         display: grid;
@@ -81,17 +89,36 @@
         margin-bottom: 1rem;
         background-color: var(--panel-color);
     }
-    .die:hover .die-remove{
-        display: grid;
-        opacity: 1;
-    }
     .die:active .die-remove{
         display: grid;
         opacity: 1;
     }
+    .die:hover .die-remove{
+        display: grid;
+        opacity: 1;
+    }
+    .die-add{
+        background-color: var(--panel-color);
+        position: relative;
+        max-height: 10rem;
+        padding: 1rem;
+        max-width: 10rem;
+        border-radius: 0.3rem;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .die-add span{
+        display: grid;
+        width: 2rem;
+        border-radius: 0.3rem;
+        height: 2rem;
+        place-content: center;
+        background-color: var(--statement-color);
+    }
     .die-remove{
         cursor: pointer;
-        transition: opacity 0.7s ease-in-out;
+        transition: all 0.7s ease-in-out;
         opacity: 0;
         position: absolute;
         background-color: var(--statement-color);
