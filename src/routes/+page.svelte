@@ -12,7 +12,7 @@
 
 <body>
     <main>
-        <h1>DoughnD</h1>
+        <h1>DnDough</h1>
         <div class="dice">
             {#each dice as die}
             <div class="die shadow">
@@ -66,7 +66,7 @@
     }
     .dice{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
         grid-template-rows: 1fr;
     }
     .die{
