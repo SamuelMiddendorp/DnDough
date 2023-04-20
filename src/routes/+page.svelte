@@ -101,6 +101,7 @@
         background-color: var(--panel-color);
         position: relative;
         max-height: 10rem;
+        height: 10rem;
         padding: 1rem;
         max-width: 10rem;
         border-radius: 0.3rem;
