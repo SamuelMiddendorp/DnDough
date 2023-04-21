@@ -12,19 +12,20 @@
    width="43.801277mm">
   <g
      transform="translate(-161.03984,-16.979278)"
-     stroke="#efefef"
+     stroke="#e8e8e8"
+     fill="#3d816c"
      id="layer1">
     <g
        id="g994"
        transform="translate(-180.79019,12.355128)">
       <path
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
          d="M 342.08003,32.5 363.73067,55 385.3813,32.5 363.73067,5 Z"
          id="path859-4" />
       <path
          id="path916"
          d="M 363.73067,55 V 5"
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
     </g>
   </g>
 </svg>

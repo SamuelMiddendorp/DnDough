@@ -26,6 +26,9 @@
         margin-bottom: 1rem;
         background-color: var(--panel-color);
     }
+    .die p{
+        background-color: #111;
+    }
     .die:active .die-remove{
         display: grid;
         opacity: 1;

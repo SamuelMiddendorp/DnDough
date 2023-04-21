@@ -26,19 +26,20 @@
   </metadata>
   <g
      id="layer1"
-     stroke="#efefef"
+     stroke="#e8e8e8"
+     fill="#3d816c"
      transform="translate(-161.03984,-16.979278)">
     <g
        transform="translate(-0.14910132,-0.17018482)"
        id="g3914">
       <path
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
          d="m 183.08959,17.60918 21.65063,12.5 V 55.109182 L 183.08959,67.609181 161.43895,55.109182 V 30.10918 Z"
          id="path857-2-8" />
       <path
          id="path3892"
          d="M 161.43895,55.109182 183.08959,17.60918 204.74021,55.109182 Z"
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round" />
+         style="stroke-width:0.499999;stroke-linecap:round" />
     </g>
   </g>
 </svg>

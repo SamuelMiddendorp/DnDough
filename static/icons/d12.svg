@@ -26,35 +26,36 @@
   </metadata>
   <g
      transform="translate(-161.03984,-16.979278)"
-     stroke="#efefef"
+     stroke="#e8e8e8"
+     fill="#3d816c"
      id="layer1">
     <g
        id="g1017"
        transform="translate(-254.40235,77.333333)">
       <path
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
          d="m 437.34283,-57.5 -12.99039,2.5 -8.66025,10 v 20 l 8.66026,10 12.99038,2.5 12.99038,-2.5 8.66025,-10 v -20 l -8.66025,-10 z"
          id="path867-3" />
       <path
          id="path1001"
          d="m 415.69219,-44.999999 12.99038,7.5 L 437.34283,-47.5 v -9.999998"
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
       <path
          id="path1003"
          d="m 437.34283,-47.5 8.66024,10.000001 12.99038,-7.5"
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
       <path
          id="path1005"
          d="M 428.68257,-37.499999 433.01269,-25 l -8.66024,10"
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
       <path
          id="path1007"
          d="M 446.00307,-37.499999 441.67295,-25 l 8.66026,10"
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
       <path
          id="path1009"
          d="m 441.67295,-25 h -8.66026"
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
     </g>
   </g>
 </svg>

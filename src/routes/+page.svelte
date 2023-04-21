@@ -96,21 +96,4 @@
         place-content: center;
         background-color: var(--statement-color);
     }
-    .die-remove{
-        cursor: pointer;
-        transition: all 0.7s ease-in-out;
-        opacity: 0;
-        position: absolute;
-        background-color: var(--statement-color);
-        border-top-left-radius: 0.3rem;
-        font-size: 2rem;
-        padding: 0.2rem;
-        display: grid;
-        place-content: center;
-        width: 2rem;
-        height: 2rem;
-        display: none;
-        top: 0;
-        left: 0;
-    }
 </style>

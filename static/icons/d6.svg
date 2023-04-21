@@ -26,7 +26,8 @@
   </metadata>
   <g
      transform="translate(-161.03984,-16.979278)"
-     stroke="#efefef"
+     stroke="#e8e8e8"
+     fill="#3d816c"
      id="layer1">
     <g
        id="g999"
@@ -34,15 +35,15 @@
       <path
          id="path857"
          d="m 238.15699,102.5 21.65063,12.5 v 25 L 238.15699,152.5 216.50635,140 v -25 z"
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
       <path
          id="path937"
          d="m 216.50635,115 21.65063,12.5 21.65064,-12.5"
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
       <path
          id="path954"
          d="m 238.15698,127.5 v 25"
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
     </g>
   </g>
 </svg>

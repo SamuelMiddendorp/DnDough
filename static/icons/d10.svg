@@ -26,7 +26,8 @@
   </metadata>
   <g
      transform="translate(-161.03984,-16.979278)"
-     stroke="#efefef"
+     stroke="#e8e8e8"
+     fill="#3d816c"
      id="layer1">
     <g
        transform="translate(-85.527396,77.534936)"
@@ -34,17 +35,17 @@
       <path
          id="path859-6"
          d="M 246.81724,-32.5 268.46788,-10 290.11851,-32.5 268.46788,-60 Z"
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
       <path
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
          d="M 246.81724,-32.500001 259.80762,-34.999998 268.46786,-30 v 20"
          id="path971" />
       <path
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
          d="m 268.46786,-30 8.66027,-4.999998 12.99038,2.499997"
          id="path973" />
       <path
-         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+         style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
          d="m 259.80762,-34.999998 8.66024,-25 8.66027,25"
          id="path975" />
     </g>
