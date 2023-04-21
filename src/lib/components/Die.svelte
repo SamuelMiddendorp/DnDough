@@ -29,13 +29,13 @@
     }
     @keyframes spin{
         33%{
-            transform: rotate(360deg);
+            transform: rotateY(360deg) rotateZ(360deg);
         }
         66%{
-            transform: rotate(360deg);
+            transform: rotateY(360deg) rotateZ(-360deg);
         }
         100%{
-            transform: rotate(360deg);
+            transform: rotateY(360deg) rotateZ(360deg);
         }
     }
     .die-icon-anim{
