@@ -1,4 +1,6 @@
 <script lang="ts">
+    import Die from "$lib/components/Die.svelte";
+
 
     interface Die{
         type: number;
@@ -19,10 +21,7 @@
         <h1>DnDough</h1>
         <div class="dice">
             {#each dice as die}
-            <div class="die shadow">
-                <p>{die.type}</p>
-                <p on:click={() => removeDie(die)} class="die-remove">-</p>
-            </div>
+            <Die />
             {/each}
             <div class="die-add shadow">
                 {#each dieTypes as dieType}
@@ -41,7 +40,7 @@
         --text-color: #E8E8E8;
     }
     @import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap");
-    * {
+    :global(*){
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -75,27 +74,6 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
         grid-template-rows: 1fr;
-    }
-    .die{
-        min-height: 10rem;
-        max-width: 10rem;
-        position: relative;
-        transition: all 0.2s ease-out;
-        display: grid;
-        place-items: center;
-        padding: 1rem;
-        border-radius: 0.3rem;
-        margin-right: 1rem;
-        margin-bottom: 1rem;
-        background-color: var(--panel-color);
-    }
-    .die:active .die-remove{
-        display: grid;
-        opacity: 1;
-    }
-    .die:hover .die-remove{
-        display: grid;
-        opacity: 1;
     }
     .die-add{
         background-color: var(--panel-color);
