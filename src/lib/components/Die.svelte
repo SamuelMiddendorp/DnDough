@@ -15,7 +15,7 @@
     <img class="{dieIsRolling ? 'die-icon-anim die-icon' : 'die-icon'}" src="/icons/d{dieType}.svg" alt="die" />
     <p class="die-value">{currentValue}</p>
     <p class="die-remove shadow">-</p>
-    <p class="die-roll shadow" on:click={() => roll()}>//</p>
+    <p class="die-roll shadow" on:click={() => roll()}>R</p>
 </div>
 
 <style>
