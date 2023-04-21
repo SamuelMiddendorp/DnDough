@@ -11,11 +11,11 @@
    version="1.1">
   <g
      id="layer1"
+     fill="#3d816c"
+     stroke="#e8e8e8"
      transform="translate(-161.03984,-16.979278)">
     <g
        id="g1651"
-     stroke="#e8e8e8"
-     fill="#3d816c"
        transform="translate(-280.38311,14.767953)">
       <path
          style="stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
@@ -26,7 +26,7 @@
          d="m 463.32359,7.5 -12.99038,27.499998 h 25.98076 z"
          id="path1049" />
       <path
-         style="stroke;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+         style="fill:none;stroke-width:0.499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
          d="M 441.67295,15 463.32359,7.5 484.97423,15"
          id="path1051" />
       <path

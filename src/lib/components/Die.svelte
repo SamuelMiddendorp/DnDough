@@ -1,19 +1,39 @@
 <script lang="ts">
+    import { rollDie } from "../utils";
+
     export let dieType: number;
     let currentValue: number = dieType;
+    const roll = () => {
+        currentValue = rollDie(dieType);
+    };
 </script>
-            <div class="die shadow">
-                <img class="die-icon" src="/icons/d{dieType}.svg" alt="die"/>
-                <p class="die-value">{currentValue}</p>
-                <p class="die-remove shadow">-</p>
-            </div>
+
+<div class="die shadow">
+    <img class="die-icon" src="/icons/d{dieType}.svg" alt="die" />
+    <p class="die-value">{currentValue}</p>
+    <p class="die-remove shadow">-</p>
+    <p class="die-roll shadow" on:click={() => roll()}>//</p>
+</div>
+
 <style>
-    .die-icon{
+    @keyframes rollDie {
+        33% {
+            transform: rotate(0deg) scale(2) skew(0deg) translate(100px);
+        }
+        66% {
+            transform: rotate(0deg) scale(1) skew(0deg) translate(100px);
+        }
+        100% {
+            transform: rotate(0deg) scale(1) skew(0deg);
+        }
+    }
+    .die-icon {
+        animation: rollDie 0.4s ease-in-out;
         width: 100%;
         height: 100%;
         position: absolute;
     }
-    .die-value{
+    .die-value {
         z-index: 2;
         background-color: #222;
         padding: 0.2rem;
@@ -23,7 +43,7 @@
         height: 2rem;
         border-radius: 0.3rem;
     }
-    .die{
+    .die {
         height: 10rem;
         max-height: 10rem;
         max-width: 10rem;
@@ -37,15 +57,15 @@
         margin-bottom: 1rem;
         background-color: var(--panel-color);
     }
-    .die:active .die-remove{
+    .die:active .die-remove {
         display: grid;
         opacity: 1;
     }
-    .die:hover .die-remove{
+    .die:hover .die-remove {
         display: grid;
         opacity: 1;
     }
-    .die-remove{
+    .die-remove {
         cursor: pointer;
         transition: all 0.7s ease-in-out;
         position: absolute;
@@ -62,4 +82,20 @@
         top: 0;
         left: 0;
     }
-            </style>
+    .die-roll {
+        cursor: pointer;
+        transition: all 0.7s ease-in-out;
+        position: absolute;
+        background-color: var(--statement-color);
+        border-top-right-radius: 0.3rem;
+        font-size: 2rem;
+        padding: 0.2rem;
+        display: grid;
+        place-content: center;
+        width: 2rem;
+        height: 2rem;
+        display: grid;
+        top: 0;
+        right: 0;
+    }
+</style>

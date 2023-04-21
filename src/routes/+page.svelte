@@ -20,14 +20,14 @@
     <main>
         <h1>DnDough</h1>
         <div class="dice">
-            {#each dice as die}
-            <Die dieType={die.type}/>
-            {/each}
             <div class="die-add shadow">
                 {#each dieTypes as dieType}
                 <span on:click={() => addDie(dieType)}>{dieType}</span>
                 {/each}
             </div>
+            {#each dice as die}
+            <Die dieType={die.type}/>
+            {/each}
         </div>
     </main>
 </body>
