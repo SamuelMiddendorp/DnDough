@@ -21,7 +21,7 @@
         <h1>DnDough</h1>
         <div class="dice">
             {#each dice as die}
-            <Die />
+            <Die dieType={die.type}/>
             {/each}
             <div class="die-add shadow">
                 {#each dieTypes as dieType}

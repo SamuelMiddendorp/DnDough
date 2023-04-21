@@ -1,5 +1,8 @@
+<script lang="ts">
+    export let dieType: number;
+</script>
             <div class="die">
-                <p>20</p>
+                <p>{dieType}</p>
                 <p class="die-remove">-</p>
             </div>
 <style>
