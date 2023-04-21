@@ -88,6 +88,7 @@
         grid-template-columns: 1fr 1fr 1fr;
     }
     .die-add span{
+        cursor: pointer;
         display: grid;
         width: 2rem;
         border-radius: 0.3rem;

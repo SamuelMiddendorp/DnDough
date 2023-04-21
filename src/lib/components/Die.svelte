@@ -2,11 +2,19 @@
     export let dieType: number;
 </script>
             <div class="die">
+                <img class="die-icon" src="/icons/d20.svg" alt="die"/>
                 <p>{dieType}</p>
                 <p class="die-remove">-</p>
             </div>
 <style>
+    .die-icon{
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
     .die{
+        background-image: url("/icons/d20.svg");
         height: 10rem;
         max-height: 10rem;
         max-width: 10rem;
