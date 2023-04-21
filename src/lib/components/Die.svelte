@@ -2,7 +2,7 @@
     export let dieType: number;
 </script>
             <div class="die shadow">
-                <img class="die-icon" src="/icons/d20_P.svg" alt="die"/>
+                <img class="die-icon" src="/icons/d{dieType}.svg" alt="die"/>
                 <p>{dieType}</p>
                 <p class="die-remove">-</p>
             </div>
