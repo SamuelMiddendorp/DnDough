@@ -50,8 +50,8 @@
         padding: 0;
         background-color: var(--background-color);
     }
-    .shadow{
-        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    :global(.shadow){
+        box-shadow: 0 3px 10px rgb(0, 0, 0);
     }
     main {
         color: var(--text-color);

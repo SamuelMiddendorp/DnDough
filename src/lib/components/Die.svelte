@@ -4,7 +4,7 @@
             <div class="die shadow">
                 <img class="die-icon" src="/icons/d{dieType}.svg" alt="die"/>
                 <p>{dieType}</p>
-                <p class="die-remove">-</p>
+                <p class="die-remove shadow">-</p>
             </div>
 <style>
     .die-icon{
@@ -26,9 +26,6 @@
         margin-bottom: 1rem;
         background-color: var(--panel-color);
     }
-    .die p{
-        background-color: #111;
-    }
     .die:active .die-remove{
         display: grid;
         opacity: 1;
@@ -49,6 +46,8 @@
         place-content: center;
         width: 2rem;
         height: 2rem;
+        opacity: 0;
+        display: none;
         top: 0;
         left: 0;
     }
