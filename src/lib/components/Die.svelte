@@ -1,9 +1,10 @@
 <script lang="ts">
     export let dieType: number;
+    let currentValue: number = dieType;
 </script>
             <div class="die shadow">
                 <img class="die-icon" src="/icons/d{dieType}.svg" alt="die"/>
-                <p>{dieType}</p>
+                <p class="die-value">{currentValue}</p>
                 <p class="die-remove shadow">-</p>
             </div>
 <style>
@@ -11,6 +12,16 @@
         width: 100%;
         height: 100%;
         position: absolute;
+    }
+    .die-value{
+        z-index: 2;
+        background-color: #222;
+        padding: 0.2rem;
+        display: grid;
+        place-content: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0.3rem;
     }
     .die{
         height: 10rem;
