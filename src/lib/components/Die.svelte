@@ -2,33 +2,48 @@
     import { rollDie } from "../utils";
 
     export let dieType: number;
+    let dieIsRolling: boolean = false;
     let currentValue: number = dieType;
     const roll = () => {
-        currentValue = rollDie(dieType);
+        dieIsRolling = true;
+        setTimeout(() => {dieIsRolling = false; currentValue = rollDie(dieType)}, 400);
     };
+
 </script>
 
 <div class="die shadow">
-    <img class="die-icon" src="/icons/d{dieType}.svg" alt="die" />
+    <img class="{dieIsRolling ? 'die-icon-anim die-icon' : 'die-icon'}" src="/icons/d{dieType}.svg" alt="die" />
     <p class="die-value">{currentValue}</p>
     <p class="die-remove shadow">-</p>
     <p class="die-roll shadow" on:click={() => roll()}>//</p>
 </div>
 
 <style>
-    @keyframes rollDie {
-        33% {
-            transform: rotate(0deg) scale(2) skew(0deg) translate(100px);
-        }
-        66% {
-            transform: rotate(0deg) scale(1) skew(0deg) translate(100px);
+    @keyframes dieSpawn {
+        0% {
+            opacity: 0;
         }
         100% {
-            transform: rotate(0deg) scale(1) skew(0deg);
+            opacity: 1;
         }
     }
+    @keyframes spin{
+        33%{
+            transform: rotate(360deg);
+        }
+        66%{
+            transform: rotate(360deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    .die-icon-anim{
+        animation: spin 1s ease-in-out !important;
+    }
     .die-icon {
-        animation: rollDie 0.4s ease-in-out;
+        opacity: 1;
+        animation: dieSpawn 0.4s ease forwards;
         width: 100%;
         height: 100%;
         position: absolute;
