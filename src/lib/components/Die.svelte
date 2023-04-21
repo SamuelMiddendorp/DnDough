@@ -1,20 +1,18 @@
 <script lang="ts">
     export let dieType: number;
 </script>
-            <div class="die">
-                <img class="die-icon" src="/icons/d20.svg" alt="die"/>
+            <div class="die shadow">
+                <img class="die-icon" src="/icons/d20_P.svg" alt="die"/>
                 <p>{dieType}</p>
                 <p class="die-remove">-</p>
             </div>
 <style>
     .die-icon{
+        width: 100%;
         height: 100%;
         position: absolute;
-        top: 0;
-        left: 0;
     }
     .die{
-        background-image: url("/icons/d20.svg");
         height: 10rem;
         max-height: 10rem;
         max-width: 10rem;
