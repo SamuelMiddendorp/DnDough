@@ -7,6 +7,7 @@
         currentValue: number;
     }
     let dieTypes: number[] = [4,6,8,10,12,20];
+    let totalValue = 0;
     let dice: Die[] = [];
     const addDie = (dieType: number) => {
         dice = [...dice, {type: dieType, currentValue: 0}];
@@ -15,6 +16,13 @@
         console.log("Foobar");
         dice = dice.filter(d => d != die);
     }
+    $:{
+        let value = 0;
+        dice.forEach(die => {
+            value = value + die.currentValue;
+        })
+        totalValue = value;
+    }
 </script>
 
 <body>
@@ -22,12 +30,13 @@
         <h1>DnDough</h1>
         <div class="dice">
             <div class="die-add shadow">
+                <h3>{totalValue}</h3>
                 {#each dieTypes as dieType}
                 <span on:click={() => addDie(dieType)}>{dieType}</span>
                 {/each}
             </div>
             {#each dice as die}
-            <Die removeDie={(die) => removeDie(die)} die={die}/>
+            <Die removeDie={(die) => removeDie(die)} bind:die={die}/>
             {/each}
         </div>
     </main>
