@@ -33,13 +33,13 @@
 </body>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100;400&display=swap');
     :root {
         --statement-color: #3d816c;
         --background-color: #060D0B;
         --panel-color: #0C1A15;
         --text-color: #E8E8E8;
     }
-    @import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap");
     :global(*){
         margin: 0;
         padding: 0;
@@ -65,9 +65,11 @@
         grid-template-rows: min-content min-content;
         grid-template-columns: 1fr;
         font-family: "Grenze Gotisch", cursive;
+        font-weight: 400;
     }
     main h1{
         font-size: 5rem;
+        font-weight: 400;
     }
     .dice{
         margin-left: 1rem;
