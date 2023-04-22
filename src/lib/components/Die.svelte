@@ -3,15 +3,18 @@
     interface Die{
         type: number,
         currentValue: number,
-        roll: () => void,
+        roll: (playSound: boolean) => void,
         sound: HTMLAudioElement
     }
     export let die: Die;
     export let removeDie: (die: Die) => void;
     let dieIsRolling: boolean = false;
-    die.roll = () => {
-        die.sound.load();
-        die.sound.play();
+    die.roll = (playSound: boolean) => {
+
+        if(playSound){
+            die.sound.load();
+            die.sound.play();
+        }
         dieIsRolling = true;
         setTimeout(() => {dieIsRolling = false; die.currentValue = rollDie(die.type)}, 400);
     };
@@ -22,7 +25,7 @@
     <img class="{dieIsRolling ? 'die-icon-anim die-icon' : 'die-icon'}" src="/icons/d{die.type}.svg" alt="die" />
     <p class="die-value">{die.currentValue}</p>
     <p class="die-remove shadow" on:click={() => removeDie(die)}>-</p>
-    <p class="die-roll shadow" on:click={() => die.roll()}>R</p>
+    <p class="die-roll shadow" on:click={() => die.roll(true)}>R</p>
 </div>
 
 <style>

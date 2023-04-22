@@ -6,13 +6,14 @@
         type: number,
         currentValue: number,
         sound: HTMLAudioElement;
-        roll: () => void
+        roll: (playSound: boolean) => void
     }
     let dieTypes: number[] = [4,6,8,10,12,20];
 
     let totalValue: number = 0;
 
-    let dieSound = new Audio('/roll.wav');
+    let dieSound = new Audio('/roll2.mp3');
+    let diceSound = new Audio('/roll.mp3');
 
     let dice: Die[] = [];
     const addDie = (dieType: number) => {
@@ -23,7 +24,9 @@
         dice = dice.filter(d => d != die);
     }
     const rollAll = () => {
-        dice.forEach(die => die.roll());
+        diceSound.load();
+        diceSound.play();
+        dice.forEach(die => die.roll(false));
     }
     $:{
         let value = 0;
