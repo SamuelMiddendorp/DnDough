@@ -1,20 +1,23 @@
 <script lang="ts">
     import { rollDie } from "../utils";
-
-    export let dieType: number;
+    interface Die{
+        type: number,
+        currentValue: number
+    }
+    export let die: Die;
+    export let removeDie: (die: Die) => void;
     let dieIsRolling: boolean = false;
-    let currentValue: number = dieType;
     const roll = () => {
         dieIsRolling = true;
-        setTimeout(() => {dieIsRolling = false; currentValue = rollDie(dieType)}, 400);
+        setTimeout(() => {dieIsRolling = false; die.currentValue = rollDie(die.type)}, 400);
     };
 
 </script>
 
 <div class="die shadow">
-    <img class="{dieIsRolling ? 'die-icon-anim die-icon' : 'die-icon'}" src="/icons/d{dieType}.svg" alt="die" />
-    <p class="die-value">{currentValue}</p>
-    <p class="die-remove shadow">-</p>
+    <img class="{dieIsRolling ? 'die-icon-anim die-icon' : 'die-icon'}" src="/icons/d{die.type}.svg" alt="die" />
+    <p class="die-value">{die.currentValue}</p>
+    <p class="die-remove shadow" on:click={() => removeDie(die)}>-</p>
     <p class="die-roll shadow" on:click={() => roll()}>R</p>
 </div>
 

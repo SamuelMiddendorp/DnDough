@@ -12,6 +12,7 @@
         dice = [...dice, {type: dieType, currentValue: 0}];
     }
     const removeDie = (die: Die) => {
+        console.log("Foobar");
         dice = dice.filter(d => d != die);
     }
 </script>
@@ -26,7 +27,7 @@
                 {/each}
             </div>
             {#each dice as die}
-            <Die dieType={die.type}/>
+            <Die removeDie={(die) => removeDie(die)} die={die}/>
             {/each}
         </div>
     </main>
