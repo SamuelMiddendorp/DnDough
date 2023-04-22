@@ -3,18 +3,24 @@
 
 
     interface Die{
-        type: number;
-        currentValue: number;
+        type: number,
+        currentValue: number,
+        roll: () => void
     }
     let dieTypes: number[] = [4,6,8,10,12,20];
-    let totalValue = 0;
+
+    let totalValue: number = 0;
+
     let dice: Die[] = [];
     const addDie = (dieType: number) => {
-        dice = [...dice, {type: dieType, currentValue: 0}];
+        dice = [...dice, {type: dieType, currentValue: 0, roll: () => {}}];
     }
     const removeDie = (die: Die) => {
         console.log("Foobar");
         dice = dice.filter(d => d != die);
+    }
+    const rollAll = () => {
+        dice.forEach(die => die.roll());
     }
     $:{
         let value = 0;
@@ -29,6 +35,7 @@
     <main>
         <h1>DnDough</h1>
         <div class="dice">
+                <h3 style="cursor: pointer" on:click={() => rollAll()}>Roll all dice</h3>
             <div class="die-add shadow">
                 <h3>{totalValue}</h3>
                 {#each dieTypes as dieType}

@@ -2,12 +2,13 @@
     import { rollDie } from "../utils";
     interface Die{
         type: number,
-        currentValue: number
+        currentValue: number,
+        roll: () => void;
     }
     export let die: Die;
     export let removeDie: (die: Die) => void;
     let dieIsRolling: boolean = false;
-    const roll = () => {
+    die.roll = () => {
         dieIsRolling = true;
         setTimeout(() => {dieIsRolling = false; die.currentValue = rollDie(die.type)}, 400);
     };
@@ -18,7 +19,7 @@
     <img class="{dieIsRolling ? 'die-icon-anim die-icon' : 'die-icon'}" src="/icons/d{die.type}.svg" alt="die" />
     <p class="die-value">{die.currentValue}</p>
     <p class="die-remove shadow" on:click={() => removeDie(die)}>-</p>
-    <p class="die-roll shadow" on:click={() => roll()}>R</p>
+    <p class="die-roll shadow" on:click={() => die.roll()}>R</p>
 </div>
 
 <style>
