@@ -5,15 +5,18 @@
     interface Die{
         type: number,
         currentValue: number,
+        sound: HTMLAudioElement;
         roll: () => void
     }
     let dieTypes: number[] = [4,6,8,10,12,20];
 
     let totalValue: number = 0;
 
+    let dieSound = new Audio('/roll.wav');
+
     let dice: Die[] = [];
     const addDie = (dieType: number) => {
-        dice = [...dice, {type: dieType, currentValue: 0, roll: () => {}}];
+        dice = [...dice, {type: dieType, currentValue: 0, roll: () => {}, sound: dieSound}];
     }
     const removeDie = (die: Die) => {
         console.log("Foobar");
@@ -35,7 +38,7 @@
     <main>
         <h1>DnDough</h1>
         <div class="dice">
-                <h3 style="cursor: pointer" on:click={() => rollAll()}>Roll all dice</h3>
+                <h3 on:click={() => rollAll()}>Roll all dice</h3>
             <div class="die-add shadow">
                 <h3>{totalValue}</h3>
                 {#each dieTypes as dieType}

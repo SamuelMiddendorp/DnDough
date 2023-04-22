@@ -3,12 +3,15 @@
     interface Die{
         type: number,
         currentValue: number,
-        roll: () => void;
+        roll: () => void,
+        sound: HTMLAudioElement
     }
     export let die: Die;
     export let removeDie: (die: Die) => void;
     let dieIsRolling: boolean = false;
     die.roll = () => {
+        die.sound.load();
+        die.sound.play();
         dieIsRolling = true;
         setTimeout(() => {dieIsRolling = false; die.currentValue = rollDie(die.type)}, 400);
     };
