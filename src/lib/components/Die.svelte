@@ -16,7 +16,7 @@
             die.sound.play();
         }
         dieIsRolling = true;
-        setTimeout(() => {dieIsRolling = false; die.currentValue = rollDie(die.type)}, 400);
+        setTimeout(() => {dieIsRolling = false; die.currentValue = rollDie(die.type)}, 800);
     };
 
 </script>
@@ -25,7 +25,7 @@
     <img class="{dieIsRolling ? 'die-icon-anim die-icon' : 'die-icon'}" src="/icons/d{die.type}.svg" alt="die" />
     <p class="die-value">{die.currentValue}</p>
     <p class="die-remove shadow" on:click={() => removeDie(die)}>-</p>
-    <p class="die-roll shadow" on:click={() => die.roll(true)}>R</p>
+    <img src="/icons/d20.svg" class="die-roll shadow" on:click={() => die.roll(true)}/>
 </div>
 
 <style>
@@ -71,6 +71,7 @@
     .die {
         height: 10rem;
         max-height: 10rem;
+        width: 10rem;
         max-width: 10rem;
         position: relative;
         transition: all 0.2s ease-out;
@@ -113,12 +114,13 @@
         position: absolute;
         background-color: var(--statement-color);
         border-top-right-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
         font-size: 2rem;
         padding: 0.2rem;
         display: grid;
         place-content: center;
-        width: 2rem;
-        height: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
         display: grid;
         top: 0;
         right: 0;
