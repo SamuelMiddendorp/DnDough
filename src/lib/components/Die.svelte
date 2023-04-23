@@ -1,13 +1,14 @@
 <script lang="ts">
     import { rollDie } from "../utils";
     interface Die{
+        id: number,
         type: number,
         currentValue: number,
         roll: (playSound: boolean) => void,
         sound: HTMLAudioElement
     }
     export let die: Die;
-    export let removeDie: (die: Die) => void;
+    export let removeDie: (dieId: number) => void;
     let dieIsRolling: boolean = false;
     die.roll = (playSound: boolean) => {
 
@@ -24,7 +25,7 @@
 <div class="die shadow">
     <img class="{dieIsRolling ? 'die-icon-anim die-icon' : 'die-icon'}" src="/icons/d{die.type}.svg" alt="die" />
     <p class="die-value">{die.currentValue}</p>
-    <p class="die-remove shadow non-selectable" on:click={() => removeDie(die)}>-</p>
+    <p class="die-remove shadow non-selectable" on:click={() => removeDie(die.id)}>-</p>
     <img src="/icons/d20.svg" class="die-roll shadow non-selectable" on:click={() => die.roll(true)}/>
 </div>
 
@@ -59,7 +60,7 @@
         position: absolute;
     }
     .die-value {
-        z-index: 2;
+        z-index: 1;
         background-color: #222;
         padding: 0.2rem;
         display: grid;
