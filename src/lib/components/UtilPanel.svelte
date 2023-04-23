@@ -1,30 +1,44 @@
 <script lang="ts">
-    import { muteAudio } from "../../stores/audioStore";
+    import { muteAudio, useDarkTheme } from "../../stores/audioStore";
 
-    
-    let muted: boolean = true;
-    let lightTheme: boolean = false;
-    $:{
+    let muted: boolean;
+    muteAudio.subscribe((x) => {
+        muted = x;
+    });
+    let darkTheme: boolean;
+    useDarkTheme.subscribe((x) => {
+        darkTheme = x;
+    });
+    $: {
         muteAudio.set(muted);
     }
-    $:{
-       let theme = lightTheme ? "light" : "dark";
-       setTheme(theme);
+    $: {
+        useDarkTheme.set(darkTheme);
+        let theme = darkTheme ? "dark" : "light";
+        setTheme(theme);
     }
     const setTheme = (theme: string) => {
-       document.documentElement.style.setProperty('--background-color', `var(--background-color-${theme})`);
-       document.documentElement.style.setProperty('--text-color', `var(--text-color-${theme})`);
-       document.documentElement.style.setProperty('--panel-color', `var(--panel-color-${theme}`);
-    }
-
+        document.documentElement.style.setProperty(
+            "--background-color",
+            `var(--background-color-${theme})`
+        );
+        document.documentElement.style.setProperty(
+            "--text-color",
+            `var(--text-color-${theme})`
+        );
+        document.documentElement.style.setProperty(
+            "--panel-color",
+            `var(--panel-color-${theme}`
+        );
+    };
 </script>
 
 <div class="util-panel shadow">
     <p class="non-selectable" on:click={() => (muted = !muted)}>
-        Mute sound: {muted? "on" : "off"}
+        Mute sound: {muted ? "on" : "off"}
     </p>
-    <p class="non-selectable" on:click={() => (lightTheme = !lightTheme)}>
-        Theme: {lightTheme ? "light" : "dark"}
+    <p class="non-selectable" on:click={() => (darkTheme = !darkTheme)}>
+        Theme: {darkTheme ? "dark" : "light"}
     </p>
 </div>
 
@@ -32,8 +46,8 @@
     .util-panel {
         z-index: 1;
         position: fixed;
-        top: 0;
-        right: 0;
+        top: 0.4rem;
+        right: 0.4rem;
         background-color: var(--panel-color);
         border-radius: 0.3rem;
         font-size: 0.8rem;
