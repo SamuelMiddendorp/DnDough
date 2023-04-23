@@ -1,7 +1,7 @@
 <script lang="ts">
     import Die from "$lib/components/Die.svelte";
     import UtilPanel from "$lib/components/UtilPanel.svelte";
-    import { getDieTemplate } from "$lib/utils";
+    import { getDiceString, getDieTemplate } from "$lib/utils";
     import { muteAudio } from "../stores/audioStore";
     let currentDieId = 0;
     let mute = true;
@@ -15,7 +15,7 @@
     }
     let dieTypes: number[] = [4, 6, 8, 10, 12, 20];
     let totalValue: number = 0;
-
+    let diceTemplate = "";
     let dieSound = new Audio("/roll2.mp3");
     let diceSound = new Audio("/roll.mp3");
     let dice: Die[] = [];
@@ -77,6 +77,16 @@
             value = value + die.currentValue;
         });
         totalValue = value;
+        diceTemplate = generateDieTemplate(dice.map(x => x.type));
+
+    }
+    const generateDieTemplate = (dice: number[]) : string => {
+        
+        return getDiceString(dice);
+
+    }
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(diceTemplate);
     }
 </script>
 
@@ -107,6 +117,7 @@
                 <h3>Dice data:</h3>
                 <h4>Total value: {totalValue}</h4>
                 <h4>Die count: {dice.length}</h4>
+                <h5 class="non-selectable" on:click={() => copyToClipboard()}>Copy current dice</h5>
             </div>
             {#each dice as die (die.id)}
                 <Die bind:die removeDie={(die) => removeDie(die)} />
@@ -178,12 +189,17 @@
         background-color: var(--panel-color);
         height: 10rem;
         max-width: 10rem;
-        padding: 1rem;
+        padding: 0.2rem;
         border-radius: 0.3rem;
     }
     .dice-info h4 {
         display: grid;
         place-content: center;
+        padding: 0.1rem;
+        border-radius: 0.3rem;
+    }
+    .dice-info h5{
+        background-color: var(--statement-color);
         cursor: pointer;
         padding: 0.2rem;
         border-radius: 0.3rem;
