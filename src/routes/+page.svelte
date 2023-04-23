@@ -118,10 +118,18 @@
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100;400&display=swap");
     :root {
+        --background-color-dark: #060d0b;
+        --panel-color-dark: #0c1a15;
+        --text-color-dark: #e8e8e8;
+
+        --background-color-light: #efefef;
+        --panel-color-light: #e8e8e8;
+        --text-color-light: #060d0b;
+
         --statement-color: #3d816c;
-        --background-color: #060d0b;
-        --panel-color: #0c1a15;
-        --text-color: #e8e8e8;
+        --background-color: var(--background-color-light);
+        --panel-color: var(--panel-color-light);
+        --text-color: var(--text-color-light);
     }
     :global(*) {
         margin: 0;
@@ -129,7 +137,7 @@
         box-sizing: border-box;
     }
     :global(.shadow) {
-        box-shadow: 0 3px 10px rgb(0, 0, 0);
+        box-shadow: 0 3px 10px var(--background-color);
     }
     :global(.non-selectable) {
         user-select: none;
@@ -203,6 +211,7 @@
         grid-template-columns: 1fr 1fr 1fr;
     }
     .die-add span {
+        color: var(--text-color);
         cursor: pointer;
         display: grid;
         width: 2rem;

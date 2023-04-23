@@ -64,7 +64,7 @@
     }
     .die-value {
         z-index: 1;
-        background-color: #222;
+        background-color: var(--panel-color);
         padding: 0.2rem;
         display: grid;
         place-content: center;

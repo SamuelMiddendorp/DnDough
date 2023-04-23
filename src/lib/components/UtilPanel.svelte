@@ -7,6 +7,15 @@
     $:{
         muteAudio.set(muted);
     }
+    $:{
+       let theme = lightTheme ? "light" : "dark";
+       setTheme(theme);
+    }
+    const setTheme = (theme: string) => {
+       document.documentElement.style.setProperty('--background-color', `var(--background-color-${theme})`);
+       document.documentElement.style.setProperty('--text-color', `var(--text-color-${theme})`);
+       document.documentElement.style.setProperty('--panel-color', `var(--panel-color-${theme}`);
+    }
 
 </script>
 
