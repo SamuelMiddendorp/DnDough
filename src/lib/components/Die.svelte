@@ -1,5 +1,8 @@
 <script lang="ts">
+    import { muteAudio } from "../../stores/audioStore";
     import { rollDie } from "../utils";
+    let mute = true;
+    muteAudio.subscribe((x) => mute = x);
     interface Die{
         id: number,
         type: number,
@@ -12,7 +15,7 @@
     let dieIsRolling: boolean = false;
     die.roll = (playSound: boolean) => {
 
-        if(playSound){
+        if(playSound && !mute){
             die.sound.load();
             die.sound.play();
         }

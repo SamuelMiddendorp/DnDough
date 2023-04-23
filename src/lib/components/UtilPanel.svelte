@@ -1,13 +1,13 @@
 <script lang="ts">
+    import { muteAudio } from "../../stores/audioStore";
+
+    
     let muted: boolean = true;
     let lightTheme: boolean = false;
-
-    $: {
-        let audioElements = document.getElementsByTagName("audio");
-        for(let i = 0; i < audioElements.length; i++){
-            audioElements[i].muted = muted;
-        }
+    $:{
+        muteAudio.set(muted);
     }
+
 </script>
 
 <div class="util-panel shadow">

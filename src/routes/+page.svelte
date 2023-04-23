@@ -2,7 +2,10 @@
     import Die from "$lib/components/Die.svelte";
     import UtilPanel from "$lib/components/UtilPanel.svelte";
     import { getDieTemplate } from "$lib/utils";
+    import { muteAudio } from "../stores/audioStore";
     let currentDieId = 0;
+    let mute = true;
+    muteAudio.subscribe(x => mute = x);
     interface Die {
         id: number;
         type: number;
@@ -25,7 +28,7 @@
                     dice = [
                         ...dice,
                         {
-                            id: currentDieId ++,
+                            id: currentDieId++,
                             type: die.type,
                             currentValue: 0,
                             roll: () => {},
@@ -43,11 +46,17 @@
     const addDie = (dieType: number) => {
         dice = [
             ...dice,
-            {id: currentDieId++, type: dieType, currentValue: 0, roll: () => {}, sound: dieSound },
+            {
+                id: currentDieId++,
+                type: dieType,
+                currentValue: 0,
+                roll: () => {},
+                sound: dieSound,
+            },
         ];
     };
     const removeDie = (dieId: number) => {
-        dice = dice.filter(d => d.id != dieId);
+        dice = dice.filter((d) => d.id != dieId);
     };
     const rollAll = () => {
         if (dice.length > 0) {
@@ -55,9 +64,11 @@
                 dice.forEach((die) => die.roll(true));
                 return;
             }
+            if (!mute) {
+                diceSound.load();
+                diceSound.play();
+            }
             dice.forEach((die) => die.roll(false));
-            diceSound.load();
-            diceSound.play();
         }
     };
     $: {
@@ -98,7 +109,7 @@
                 <h4>Die count: {dice.length}</h4>
             </div>
             {#each dice as die (die.id)}
-                <Die bind:die removeDie={(die) => removeDie(die)}  />
+                <Die bind:die removeDie={(die) => removeDie(die)} />
             {/each}
         </div>
     </main>
