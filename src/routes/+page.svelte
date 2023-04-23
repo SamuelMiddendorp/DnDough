@@ -1,5 +1,6 @@
 <script lang="ts">
     import Die from "$lib/components/Die.svelte";
+    import UtilPanel from "$lib/components/UtilPanel.svelte";
     import { getDieTemplate } from "$lib/utils";
 
 
@@ -54,18 +55,19 @@
 
 <body>
     <main>
+        <UtilPanel />
         <h1>DnDough</h1>
         <div class="dice">
             <div class="die-panel shadow">
                 <h3>Add die:</h3>
                 <div class="die-add">
                     {#each dieTypes as dieType}
-                    <span on:click={() => addDie(dieType)}>{dieType}</span>
+                    <span class="non-selectable" on:click={() => addDie(dieType)}>{dieType}</span>
                     {/each}
                 </div>
         </div>
             <div class="dice-info shadow">
-                <h3 style="margin-bottom: 0.2rem;background-color: var(--statement-color); padding: 0.1rem; border-radius: 0.3rem; cursor: pointer" on:click={() => rollAll()}>Roll all dice</h3>
+                <h3 class="non-selectable" style="margin-bottom: 0.2rem;background-color: var(--statement-color); padding: 0.1rem; border-radius: 0.3rem; cursor: pointer" on:click={() => rollAll()}>Roll all dice</h3>
                 <h3>Dice data:</h3>
                 <h4>Total value: {totalValue}</h4>
                 <h4>Die count: {dice.length}</h4>
@@ -90,13 +92,16 @@
         padding: 0;
         box-sizing: border-box;
     }
+    :global(.shadow){
+        box-shadow: 0 3px 10px rgb(0, 0, 0);
+    }
+    :global(.non-selectable){
+        user-select: none;
+    }
     body {
         margin: 0;
         padding: 0;
         background-color: var(--background-color);
-    }
-    :global(.shadow){
-        box-shadow: 0 3px 10px rgb(0, 0, 0);
     }
     main {
         color: var(--text-color);
