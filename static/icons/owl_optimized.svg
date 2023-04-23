@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="owl_v3.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg1149"
+   version="1.1"
+   viewBox="0 0 379.96191 101.45911"
+   height="100%"
+   width="100%">
+  <g
+     transform="translate(71.296434,-27.133539)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       class="moon" 
+       d="m 13.361269,28.133547 a 11.804079,11.804079 0 0 0 -11.8039885,11.80391 11.804079,11.804079 0 0 0 11.8039885,11.80446 11.804079,11.804079 0 0 0 10.55807,-6.52571 19.099197,19.099197 0 0 1 -10.55807,-17.08266 z"
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#efefef;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1026" />
+    <path
+       class="transformable"
+       id="path1028"
+       style="display:inline;fill:none;fill-opacity:1;stroke:#efefef;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -51.19734,28.133547 a 19.099197,19.099197 0 0 0 -19.099094,19.09909 19.099197,19.099197 0 0 0 0.05168,1.40508 l -0.03876,0.0207 A 80.900003,80.900003 0 0 0 -0.19167051,127.40917 211.78972,211.78972 0 0 0 -33.060465,53.218347 a 19.099197,19.099197 0 0 0 0.962216,-5.98568 19.099197,19.099197 0 0 0 -19.099091,-19.09909 z" />
+    <text
+    class="transformable"
+       xml:space="preserve"
+       style="fill: #efefef;font-size:33.514px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;display:inline;stroke-width:0.264583"
+       x="-0.43464762"
+       y="100.47602"
+       id="text1034"><tspan
+         sodipodi:role="line"
+         id="tspan1032"
+         x="-0.43464762"
+         y="100.47602"
+         style="font-size:33.514px;stroke-width:0.264583">Samuel Middendorp</tspan></text>
+    <path
+       class="transformable"
+       id="path1094"
+       d="m -4.9791795,109.91438 c 0,0 41.5832855,-1.10354 76.1768855,8.3976"
+       style="display:inline;fill:none;fill-opacity:1;stroke:#efefef;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       class="transformable"
+       id="path1112"
+       d="m -56.02654,121.81889 c 0,0 41.042237,-6.77649 76.609769,-2.09252"
+       style="display:inline;fill:none;fill-opacity:1;stroke:#efefef;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>

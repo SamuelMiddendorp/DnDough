@@ -123,6 +123,7 @@
                 <Die bind:die removeDie={(die) => removeDie(die)} />
             {/each}
         </div>
+    <footer>Made by: <a href="https://samuelmiddendorp.com"><img src="/icons/owl_optimized.svg"/></a></footer>
     </main>
 </body>
 
@@ -167,7 +168,7 @@
         margin-left: auto;
         display: grid;
         justify-content: center;
-        grid-template-rows: min-content min-content;
+        grid-template-rows: min-content min-content 1fr;
         grid-template-columns: 1fr;
         font-family: "Grenze Gotisch", cursive;
         font-weight: 400;
@@ -177,6 +178,23 @@
         margin-left: 1rem;
         font-size: 5rem;
         font-weight: 400;
+    }
+    footer{
+        align-self: end;
+        color: #efefef;
+        display: grid;
+        height: 5rem;
+        width: 10rem;
+        position: relative;
+        font-family: sans-serif;
+        bottom: 0;
+        padding: 0.8rem;
+    }
+    footer img{
+        position: relative;
+        display: inline-block;
+        height: 75%;
+        width: 75%;
     }
     .dice {
         margin-left: 1rem;
