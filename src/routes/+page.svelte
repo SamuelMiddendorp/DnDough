@@ -156,16 +156,18 @@
     :global(.non-selectable) {
         user-select: none;
     }
+    :global(html){
+        background-color: var(--background-color);
+    }
     body {
         margin: 0;
         padding: 0;
-        background-color: var(--background-color);
     }
     main {
         color: var(--text-color);
         max-width: 1200px;
         width: 100%;
-        min-height: 100vh;
+        min-height: 95vh;
         margin-right: auto;
         margin-left: auto;
         display: grid;
