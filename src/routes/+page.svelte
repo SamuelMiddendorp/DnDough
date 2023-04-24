@@ -1,8 +1,10 @@
 <script lang="ts">
     import Die from "$lib/components/Die.svelte";
     import UtilPanel from "$lib/components/UtilPanel.svelte";
+
     import { getDiceString, getDieTemplate } from "$lib/utils";
     import { muteAudio } from "../stores/audioStore";
+
     let currentDieId = 0;
     let mute = true;
     muteAudio.subscribe(x => mute = x);
@@ -207,7 +209,8 @@
         background-color: var(--panel-color);
         height: 10rem;
         max-width: 10rem;
-        padding: 0.2rem;
+        padding: 1rem;
+        padding-top: 0.5rem;
         border-radius: 0.3rem;
     }
     .dice-info h4 {
