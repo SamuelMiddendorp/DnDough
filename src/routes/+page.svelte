@@ -125,7 +125,7 @@
                 <Die bind:die removeDie={(die) => removeDie(die)} />
             {/each}
         </div>
-    <footer>Made by: <a href="https://samuelmiddendorp.com"><img src="/icons/owl_optimized.svg"/></a></footer>
+    <footer><a href="https://samuelmiddendorp.com"><img src="/icons/owl_optimized.svg"/></a></footer>
     </main>
 </body>
 
@@ -167,7 +167,7 @@
         color: var(--text-color);
         max-width: 1200px;
         width: 100%;
-        min-height: 95vh;
+        min-height: 90vh;
         margin-right: auto;
         margin-left: auto;
         display: grid;
@@ -185,20 +185,24 @@
     }
     footer{
         align-self: end;
-        color: #efefef;
+        color: var(--text-color-dark);
+        background-color: var(--statement-color);
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
         display: grid;
-        height: 5rem;
-        width: 10rem;
         position: relative;
+        width: 8rem;
+        left: 0;
+        height: 3rem;
         font-family: sans-serif;
         bottom: 0;
-        padding: 0.8rem;
+        padding: 0.4rem;
     }
     footer img{
         position: relative;
         display: inline-block;
-        height: 75%;
-        width: 75%;
+        height: 100%;
+        width: 100%;
     }
     .dice {
         margin-left: 1rem;
