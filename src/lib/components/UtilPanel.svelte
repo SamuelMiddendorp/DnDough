@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { muteAudio, useDarkTheme } from "../../stores/audioStore";
+    import { muteAudio, useDarkTheme } from "../../stores/preferenceStore";
 
     let muted: boolean;
     muteAudio.subscribe((x) => {

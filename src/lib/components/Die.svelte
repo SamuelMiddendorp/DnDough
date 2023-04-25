@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { muteAudio } from "../../stores/audioStore";
+    import { muteAudio} from "../../stores/preferenceStore";
     import { rollDie } from "../utils";
-    let mute = true;
+    let mute = false;
     muteAudio.subscribe((x) => mute = x);
     interface Die{
         id: number,
@@ -22,7 +22,6 @@
         dieIsRolling = true;
         setTimeout(() => {dieIsRolling = false; die.currentValue = rollDie(die.type)}, 800);
     };
-
 </script>
 
 <div class="die shadow">

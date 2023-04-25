@@ -3,7 +3,7 @@
     import UtilPanel from "$lib/components/UtilPanel.svelte";
 
     import { getDiceString, getDieTemplate } from "$lib/utils";
-    import { muteAudio } from "../stores/audioStore";
+    import { muteAudio } from "../stores/preferenceStore";
 
     let currentDieId = 0;
     let mute = true;
