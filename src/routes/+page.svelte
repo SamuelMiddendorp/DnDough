@@ -21,6 +21,19 @@
     let dieSound = new Audio("/roll2.mp3");
     let diceSound = new Audio("/roll.mp3");
     let dice: Die[] = [];
+    const rollAll = () => {
+        if (dice.length > 0) {
+            if (dice.length == 1) {
+                dice.forEach((die) => die.roll(true));
+                return;
+            }
+            if (!mute) {
+                diceSound.load();
+                diceSound.play();
+            }
+            dice.forEach((die) => die.roll(false));
+        }
+    };
     const loadTemplate = () => {
         let template = getDieTemplate();
 
@@ -40,6 +53,9 @@
                 }
             }
         });
+        // Bit of an evil fix but dice need to have a change
+        // to be bound and implemented by their component
+        setTimeout(() => rollAll(), 20);
     };
     // We want to know if values are supplied
     if (window.location.href.split("/?").length > 1) {
@@ -59,19 +75,6 @@
     };
     const removeDie = (dieId: number) => {
         dice = dice.filter((d) => d.id != dieId);
-    };
-    const rollAll = () => {
-        if (dice.length > 0) {
-            if (dice.length == 1) {
-                dice.forEach((die) => die.roll(true));
-                return;
-            }
-            if (!mute) {
-                diceSound.load();
-                diceSound.play();
-            }
-            dice.forEach((die) => die.roll(false));
-        }
     };
     $: {
         let value = 0;
