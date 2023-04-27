@@ -91,6 +91,7 @@
 
     }
     const copyToClipboard = () => {
+        // only works on https
         navigator.clipboard.writeText(diceTemplate);
     }
 </script>

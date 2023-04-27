@@ -9,6 +9,7 @@
     useDarkTheme.subscribe((x) => {
         darkTheme = x;
     });
+    let rollOnTemplate: boolean;
     $: {
         muteAudio.set(muted);
     }
@@ -34,6 +35,9 @@
 </script>
 
 <div class="util-panel shadow">
+    <p class="non-selectable" on:click={() => (rollOnTemplate = !rollOnTemplate)}>
+        Auto roll: {rollOnTemplate ? "on" : "off"}
+    </p>
     <p class="non-selectable" on:click={() => (muted = !muted)}>
         Mute sound: {muted ? "on" : "off"}
     </p>
