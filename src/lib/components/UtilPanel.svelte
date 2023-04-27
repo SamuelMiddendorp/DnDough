@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { muteAudio, useDarkTheme } from "../../stores/preferenceStore";
+    import { muteAudio, rollOnTemplate, useDarkTheme } from "../../stores/preferenceStore";
 
     let muted: boolean;
     muteAudio.subscribe((x) => {
@@ -9,7 +9,10 @@
     useDarkTheme.subscribe((x) => {
         darkTheme = x;
     });
-    let rollOnTemplate: boolean;
+    let autoRoll: boolean;
+    rollOnTemplate.subscribe((x) => {
+        autoRoll = x;
+    })
     $: {
         muteAudio.set(muted);
     }
@@ -17,6 +20,9 @@
         useDarkTheme.set(darkTheme);
         let theme = darkTheme ? "dark" : "light";
         setTheme(theme);
+    }
+    $: {
+        rollOnTemplate.set(autoRoll);
     }
     const setTheme = (theme: string) => {
         document.documentElement.style.setProperty(
@@ -35,8 +41,8 @@
 </script>
 
 <div class="util-panel shadow">
-    <p class="non-selectable" on:click={() => (rollOnTemplate = !rollOnTemplate)}>
-        Auto roll: {rollOnTemplate ? "on" : "off"}
+    <p class="non-selectable" on:click={() => (autoRoll = !autoRoll)}>
+        Auto roll: {autoRoll ? "on" : "off"}
     </p>
     <p class="non-selectable" on:click={() => (muted = !muted)}>
         Mute sound: {muted ? "on" : "off"}

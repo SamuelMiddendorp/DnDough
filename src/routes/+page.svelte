@@ -3,10 +3,12 @@
     import UtilPanel from "$lib/components/UtilPanel.svelte";
 
     import { getDiceString, getDieTemplate } from "$lib/utils";
-    import { muteAudio } from "../stores/preferenceStore";
+    import { muteAudio, rollOnTemplate } from "../stores/preferenceStore";
 
     let currentDieId = 0;
     let mute = true;
+    let autoRoll = false;
+    rollOnTemplate.subscribe(x => autoRoll = x);
     muteAudio.subscribe(x => mute = x);
     interface Die {
         id: number;
@@ -28,6 +30,7 @@
                 return;
             }
             if (!mute) {
+                console.log("Foobar");
                 diceSound.load();
                 diceSound.play();
             }
@@ -55,7 +58,9 @@
         });
         // Bit of an evil fix but dice need to have a change
         // to be bound and implemented by their component
-        setTimeout(() => rollAll(), 20);
+        if(autoRoll){
+            setTimeout(() => rollAll(), 40);
+        }
     };
     // We want to know if values are supplied
     if (window.location.href.split("/?").length > 1) {
