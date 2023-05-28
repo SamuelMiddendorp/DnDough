@@ -154,6 +154,9 @@
         padding: 0;
         box-sizing: border-box;
     }
+    :global(button){
+        all: unset;
+    }
     :global(.shadow) {
         box-shadow: 0 3px 10px var(--background-color);
     }
