@@ -1,23 +1,19 @@
 <script lang="ts">
-    import { muteAudio} from "../../stores/preferenceStore";
+    import { playDieSound } from "../../stores/audioStore";
     import { rollDie } from "../utils";
-    let mute = false;
-    muteAudio.subscribe((x) => mute = x);
+
     interface Die{
         id: number,
         type: number,
         currentValue: number,
         roll: (playSound: boolean) => void,
-        sound: HTMLAudioElement
     }
     export let die: Die;
     export let removeDie: (dieId: number) => void;
     let dieIsRolling: boolean = false;
     die.roll = (playSound: boolean) => {
-
-        if(playSound && !mute){
-            die.sound.load();
-            die.sound.play();
+        if(playSound){
+            playDieSound();
         }
         dieIsRolling = true;
         setTimeout(() => {dieIsRolling = false; die.currentValue = rollDie(die.type)}, 800);

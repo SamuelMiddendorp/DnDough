@@ -3,6 +3,7 @@
     import UtilPanel from "$lib/components/UtilPanel.svelte";
 
     import { getDiceString, getDieTemplate } from "$lib/utils";
+    import { playDiceSound } from "../stores/audioStore";
     import { muteAudio, rollOnTemplate } from "../stores/preferenceStore";
 
     let currentDieId = 0;
@@ -14,14 +15,11 @@
         id: number;
         type: number;
         currentValue: number;
-        sound: HTMLAudioElement;
         roll: (playSound: boolean) => void;
     }
     let dieTypes: number[] = [4, 6, 8, 10, 12, 20];
     let totalValue: number = 0;
     let diceTemplate = "";
-    let dieSound = new Audio("/roll2.mp3");
-    let diceSound = new Audio("/roll.mp3");
     let dice: Die[] = [];
     const rollAll = () => {
         if (dice.length > 0) {
@@ -31,8 +29,7 @@
             }
             if (!mute) {
                 console.log("Foobar");
-                diceSound.load();
-                diceSound.play();
+                playDiceSound();
             }
             dice.forEach((die) => die.roll(false));
         }
@@ -50,7 +47,6 @@
                             type: die.type,
                             currentValue: 0,
                             roll: () => {},
-                            sound: dieSound,
                         },
                     ];
                 }
@@ -74,7 +70,6 @@
                 type: dieType,
                 currentValue: 0,
                 roll: () => {},
-                sound: dieSound,
             },
         ];
     };
