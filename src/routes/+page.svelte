@@ -105,31 +105,31 @@
                 <h3>Add die:</h3>
                 <div class="die-add">
                     {#each dieTypes as dieType}
-                        <span
+                        <button
                             class="non-selectable"
-                            on:click={() => addDie(dieType)}>{dieType}</span
+                            on:click={() => addDie(dieType)}>{dieType}</button
                         >
                     {/each}
                 </div>
             </div>
             <div class="dice-info shadow">
-                <h3
+                <button
                     class="non-selectable"
                     style="margin-bottom: 0.2rem;background-color: var(--statement-color); padding: 0.1rem; border-radius: 0.3rem; cursor: pointer"
                     on:click={() => rollAll()}
                 >
                     Roll all dice
-                </h3>
+            </button>
                 <h3>Dice data:</h3>
                 <h4>Total value: {totalValue}</h4>
                 <h4>Die count: {dice.length}</h4>
-                <h5 class="non-selectable" on:click={() => copyToClipboard()}>Copy current dice</h5>
+                <button class="non-selectable" on:click={() => copyToClipboard()}>Copy current dice</button>
             </div>
             {#each dice as die (die.id)}
                 <Die bind:die removeDie={(die) => removeDie(die)} />
             {/each}
         </div>
-    <footer><a href="https://samuelmiddendorp.com"><img src="/icons/owl_optimized.svg"/></a></footer>
+    <footer><a href="https://samuelmiddendorp.com"><img src="/icons/owl_optimized.svg" alt="owl-logo"/></a></footer>
     </main>
 </body>
 
@@ -156,6 +156,9 @@
     }
     :global(button){
         all: unset;
+    }
+    :global(button:focus){
+        border: 2px solid #333;
     }
     :global(.shadow) {
         box-shadow: 0 3px 10px var(--background-color);
@@ -232,7 +235,7 @@
         padding: 0.1rem;
         border-radius: 0.3rem;
     }
-    .dice-info h5{
+    .dice-info button{
         background-color: var(--statement-color);
         cursor: pointer;
         padding: 0.2rem;
@@ -260,7 +263,7 @@
         justify-items: center;
         grid-template-columns: 1fr 1fr 1fr;
     }
-    .die-add span {
+    .die-add button {
         color: var(--text-color);
         cursor: pointer;
         display: grid;
