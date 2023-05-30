@@ -158,7 +158,7 @@
         all: unset;
     }
     :global(button:focus){
-        border: 2px solid #333;
+        border: 2px solid #5fc9a8;
     }
     :global(.shadow) {
         box-shadow: 0 3px 10px var(--background-color);

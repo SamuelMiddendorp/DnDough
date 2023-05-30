@@ -41,15 +41,15 @@
 </script>
 
 <div class="util-panel shadow">
-    <p class="non-selectable" on:click={() => (autoRoll = !autoRoll)}>
+    <button class="non-selectable" on:click={() => (autoRoll = !autoRoll)}>
         Auto roll: {autoRoll ? "on" : "off"}
-    </p>
-    <p class="non-selectable" on:click={() => (muted = !muted)}>
+    </button>
+    <button class="non-selectable" on:click={() => (muted = !muted)}>
         Mute sound: {muted ? "on" : "off"}
-    </p>
-    <p class="non-selectable" on:click={() => (darkTheme = !darkTheme)}>
+    </button>
+    <button class="non-selectable" on:click={() => (darkTheme = !darkTheme)}>
         Theme: {darkTheme ? "dark" : "light"}
-    </p>
+    </button>
 </div>
 
 <style>
@@ -64,7 +64,7 @@
         display: grid;
         padding: 0.3rem;
     }
-    .util-panel p {
+    .util-panel button {
         cursor: pointer;
         padding: 0.2rem;
         border-radius: 0.3rem;
