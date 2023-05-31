@@ -16,6 +16,9 @@ Simple Dice "templates" can be made by appending dice type and count to the url,
 
 
 At any moment you can copy current dice, this will give you a dice template you can "save" and append the base url with.
+## TODO
+- ui uix quality of life changes
+- Automated deploys
 
 Happy rolling!
 
